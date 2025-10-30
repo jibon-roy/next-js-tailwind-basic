@@ -1,0 +1,21 @@
+{
+  "meta.title": "Créer une application Next",
+  "meta.description": "Généré par create next app",
+  "footer.text": "Pied de page",
+
+  "banner.title.part1": "Gestion Automatisée",
+  "banner.title.highlight": "d'événements 'Live'",
+  "banner.title.part2": "pour les clubs sportifs",
+  "banner.subtitle": "Deux versions — une avec mention d'IA, une sans (confirmez si l'IA est utilisée)",
+  "banner.cta": "Essayer 1 mois gratuit",
+  "banner.cta.alert": "Redirection vers l'app store...",
+  "nav.home": "Accueil",
+  "nav.howItWorks": "Comment ça marche",
+  "nav.pricing": "Tarifs",
+  "nav.faq": "FAQ",
+  "nav.contact": "Contact",
+  "nav.download": "Télécharger notre application",
+  "nav.downloadAlert": "Redirection vers l'app store...",
+  "notFound.title": "Page introuvable",
+  "notFound.goHome": "Aller à l'accueil"
+}

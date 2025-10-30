@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "@/assets/images/logo.png";
+import { useTranslations } from "@/lib/ClientI18nProvider";
+import LanguageSwitcher from "@/components/shared/NavBar/language/LanguageSwitcher";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,12 +20,14 @@ export default function Navbar() {
     return pathname === path;
   };
 
+  const t = useTranslations();
+
   const navItems = [
-    { name: "Home", path: "/" },
-    { name: "How it work", path: "/how-it-works" },
-    { name: "Pricing", path: "/pricing" },
-    { name: "FAQ's", path: "/faq" },
-    { name: "Contact", path: "/contact" },
+    { name: t("nav.home", "Home"), path: "/" },
+    { name: t("nav.howItWorks", "How it work"), path: "/how-it-works" },
+    { name: t("nav.pricing", "Pricing"), path: "/pricing" },
+    { name: t("nav.faq", "FAQ's"), path: "/faq" },
+    { name: t("nav.contact", "Contact"), path: "/contact" },
   ];
 
   return (
@@ -31,14 +35,14 @@ export default function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-24">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <Link href="/">
               <Image
                 src={logo}
                 alt="Logo"
                 width={82}
                 height={40}
-                className="w-[82px] h-[40px]"
+                className="w-[82px] h-10"
               />
             </Link>
           </div>
@@ -66,13 +70,18 @@ export default function Navbar() {
           {/* Download Button */}
           <div className="hidden lg:block">
             <button
-              className="bg-black-primary text-white px-[26px] py-4 rounded-[12px] text-sm font-medium hover:bg-gray-800 transition-colors duration-200 cursor-pointer"
+              className="bg-black-primary text-white px-[26px] py-4 rounded-xl text-sm font-medium hover:bg-gray-800 transition-colors duration-200 cursor-pointer"
               onClick={() => {
-                alert("Redirecting to app store...");
+                alert(t("nav.downloadAlert", "Redirecting to app store..."));
               }}
             >
-              Download our app
+              {t("nav.download", "Download our app")}
             </button>
+          </div>
+
+          {/* Language Switcher (desktop) */}
+          <div className="hidden lg:block lg:ml-4">
+            <LanguageSwitcher />
           </div>
 
           {/* Mobile menu button */}
@@ -141,11 +150,11 @@ export default function Navbar() {
               <button
                 className="w-full bg-black text-white px-6 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors duration-200"
                 onClick={() => {
-                  alert("Redirecting to app store...");
+                  alert(t("nav.downloadAlert", "Redirecting to app store..."));
                   setIsMenuOpen(false);
                 }}
               >
-                Download our app
+                {t("nav.download", "Download our app")}
               </button>
             </div>
           </div>

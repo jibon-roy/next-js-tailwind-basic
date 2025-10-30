@@ -1,11 +1,9 @@
-import React from 'react';
+import React from "react";
+import { useTranslations } from "@/lib/ClientI18nProvider";
 
 const Footer = () => {
-    return (
-        <div>
-            Footer
-        </div>
-    );
+  const t = useTranslations();
+  return <div>{t("footer.text", "Footer")}</div>;
 };
 
 export default Footer;

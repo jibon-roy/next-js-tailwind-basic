@@ -52,14 +52,14 @@ export const Drawer = ({
       {/* Backdrop */}
       {isOpen && (
         <div
-          className={`fixed z-[999] inset-0 bg-black/30 bg-opacity-50 ${zIndex}`}
+          className={`fixed inset-0 bg-black/30 bg-opacity-50 ${zIndex}`}
           onClick={onClose}
         />
       )}
 
       {/* Drawer */}
       <div
-        className={`fixed z-[999999] top-0 right-0 h-full ${width} ${backgroundColor} transform ${
+        className={`fixed top-0 right-0 h-full ${width} ${backgroundColor} transform ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-300 ease-in-out`}
       >
